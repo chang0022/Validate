@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.3.js"></script>
+</head>
+<body>
+<form action="">
+
+</form>
+<button id="creata">创建</button>
+<button id="getVal">获取</button>
+</body>
+<script>
+    $('#creata').click(function () {
+        var p = $("form");
+        var input1 = $('<input type="checkbox" checked="checked">');
+            input2 = $('<input type="checkbox" checked="checked">');
+        p.append(input1);
+        p.append(input2);
+    })
+    $("#getVal").click(function () {
+        var input = $("input").is(":checked").length;
+        console.log(input)
+    })
+</script>
+</html>

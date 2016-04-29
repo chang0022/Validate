@@ -1,0 +1,51 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script type="text/javascript" src="js/jquery-1.12.3.js" ></script>
+    <script type='text/javascript' src='js/layer/layer.js'></script>
+    <script type='text/javascript' src='js/custom.js'></script>
+    <style>
+        form {
+            padding: 100px;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" id="validate" >
+        <input type="text" name="name" data-type="username" minlength="2" maxlength="7" value="111" data-tips="1" required/>
+        <input type="password" name="password" data-type="password" minlength="2" maxlength="6" value="11111" />
+        <input type="button" name="btn">
+        <select name="s" id="s">
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+        </select>
+        <input type="submit" id="submitBtn">
+    </form>
+</body>
+<script type="text/javascript">
+    $("#validate").Validate();
+</script>
+<script>
+    var database = {
+        users: ["Neo", "Chang", "Feng"],
+        sendEmail: function (user) {
+            if (this.isValidUser(user)) {
+                console.log("你好，" + user);
+            } else {
+                console.log("抱歉，"+ user);
+            }
+        },
+        isValidUser: function (user) {
+            return /^N/.test(user);
+        }
+    };
+
+    database.users.forEach(
+            database.sendEmail,
+            database
+    );
+</script>
+</html>
